@@ -1,5 +1,5 @@
 import React from 'react'
-import EstiloPrimeiroComponente from '../styles/principal.css'
+import '../styles/principal.css'
 
 
 const PrimeiroComponente = () => {

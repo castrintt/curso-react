@@ -36,4 +36,4 @@ import Header from './components/Header.jsx'
 
 // ( por padrão eu sempre coloco as extensões então ja não faz muita diferença! )
 
-import EstiloCss from './diretorio_do_arquivo css.css'
+import './diretorio_do_arquivo css.css'
