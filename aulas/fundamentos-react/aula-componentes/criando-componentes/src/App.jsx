@@ -1,5 +1,6 @@
 
 import PrimeiroComponente from './components/PrimeiroComponente.jsx'
+import TemplateExpressions from './components/TemplateExpressions.jsx'
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
        Aqui temos o componente principal
      </h1>
      <PrimeiroComponente/>
+     <TemplateExpressions />
     </div>
   )
 }
