@@ -1,7 +1,8 @@
 import PrimeiroComponente from './components/PrimeiroComponente.jsx'
 import TemplateExpressions from './components/TemplateExpressions.jsx'
 import Criando from './components/Criando.jsx'
-
+import Eventos from './components/Eventos.jsx'
+import Renderizacao from './components/Renderizacao.jsx'
 
 function App() {
   return (
@@ -12,6 +13,8 @@ function App() {
      <PrimeiroComponente/>
      <TemplateExpressions />
      <Criando />
+     <Eventos />
+     <Renderizacao />
     </div>
   )
 }
