@@ -3,13 +3,13 @@ import React from 'react'
 const Renderizacao = () => {
 
     function handleRender(value) {
-        if (value == true){
+        if (value == true) {
             return (
                 <div>
                     <h1>Componente renderizado!!!</h1>
                 </div>
             )
-        }else{
+        } else {
             return (
 
                 <div>
