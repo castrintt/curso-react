@@ -1,10 +1,77 @@
+// Previous state
+
+//Previous state é um recurso que nos permite pegar o dado em seu valor original dentro de um set de dado
+
+// isso é muito utilizado para modificar listas, pois temos o valor antigo e transformamos em um valor novo
+
+// o primeiro argumento de um set sempre sera o previous state
+
+//Vamos deletar um dos usuarios da seguinte lista criada, usando previous state
+
+
+
+import React from 'react'
+
+const App = () => {
+
+    const [user, setUser] = React.useState([
+        {
+            id:1,
+            name:'igor'
+        },
+        {
+            id:2,
+            name:'maria'
+        },
+        {
+            id:3,
+            name:'matheus'
+        },
+        {
+            id:4,
+            name:'isabela'
+        },
+        
+    ])
+
+    const deleteRandom = () => {
+
+        const randomNumero = Math.floor(Math.random() * 4)
+
+
+        setUser((prevUser) => {
+            return prevUser.filter((value) => user.id !== randomNumero)
+        })
+
+    }
+
+    return(
+
+        <div>
+            <ul>
+                {user.map((values) => (
+
+                    <li key={values.id}>
+                        {values.name}
+                    </li>
+                ))}
+            </ul>
+            <button
+                onClick={deleteRandom}
+            >
+                    Delete Random
+            </button>
+        </div>
+    )
+}
+
+
+//explicação
+
 import React from 'react'
 
 const Listas = () => {
 
-    const [afazeres] = React.useState(['Dormir','Acordar','Estudar','Trabalhar','Estudar mais!!'])
-
-    const [numeros] = React.useState([1,2,3,4,5,6,7,8,9,10])
 
     const [dados, setDados] = React.useState([
         {
@@ -28,7 +95,6 @@ const Listas = () => {
         //vamos usar a função setNomeDaVariavel! passando como parametro o prevNomeDaVariavel para resgatar o valor previo!
         setDados((prevDados) => {
             //agora vamos retornar por meio de um filter os dados que são diferentes do numero retirado no randomNumber
-            console.log(prevDados)
             return dados.filter((values) => {
                 //retornando os valores diferentes do numero aleatorio!
                 return values.id !== randomNumber
@@ -40,25 +106,6 @@ const Listas = () => {
     return (
 
         <div>
-            <ul>
-                {afazeres.map((values,index) => (
-                    <li key={index}>
-                        {values}
-                    </li>
-                ))}
-            </ul>
-            <br />
-            <ul>
-                {numeros.map((values, index) => (
-                    <li key={index}>
-                        {values}
-                    </li>
-                ))}
-            </ul>
-
-                    {/* renderizando dados de um array de objetos */}
-
-            <br />
             <ul>
                     {dados.map((values) => (
                         <li key={values.id}>
@@ -80,3 +127,5 @@ const Listas = () => {
 }
 
 export default Listas
+
+//prevUser é sempre o valor atual, porem depois da execução da função ele passa a ser o valor anterior!
