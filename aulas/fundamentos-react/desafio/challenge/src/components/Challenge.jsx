@@ -31,7 +31,7 @@ const Challenge = () => {
             </button>
             <h1 id='merda'>
                 Resultado: {
-                    valor == true ? soma(numero1, numero2) : 'Castro amante do romulo'
+                    valor == true ? soma(numero1, numero2) : '0'
                 }
             </h1>
         </div>
