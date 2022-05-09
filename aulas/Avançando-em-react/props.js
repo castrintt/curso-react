@@ -127,3 +127,74 @@ const ComponenteFilho = (props) => {
 //ou seja, podemos passar valores via props de forma direta (nomeProps="valorProps") , usando variaveis(const x = 12 [ nomeProps={x} ]) ou usando useState com a sintaxe identica a uma variavel!
 
 
+
+//podemos passar tbm listas e objetos como props veja só!
+
+//dentro do componente pai passando uma lista de objetos e uma lista simples
+import React, {useState} from 'react'
+import ComponenteFilho from './components/ComponenteFilho'
+
+function ComponentePai() {
+
+  const [listaDeObjetos, setlistaDeObjetos] = useState([
+    {
+      id:12,
+      name:'igor'
+    },
+    {
+      id:123,
+      name:'carlos'
+    },
+    {
+      id:14142,
+      name:'matheus'
+    },
+  ])
+
+  const [listaSimples, setListaSimples] = useState([1,2,3,4,5,6,7])
+
+
+  return (
+    <div>
+        <ComponenteFilho passandoObjeto={listaDeObjetos}  passandoLista={listaSimples}/>
+    </div>
+  )
+}
+
+export default ComponentePai
+
+
+// agora dentro do componente filho vamos usa-las
+
+import React, {useState} from 'react'
+
+
+const ComponenteFilho = ({passandoObjeto, passandoLista}) => {
+
+
+    return(
+        <div>
+            <ul>
+                {/* aqui vamos criar uma lista com todos os nomes dos objetos! */}
+                {passandoObjeto.map((values) => (
+                    //passando como key os ids do objeto
+                    <li key={values.id}>
+                        {values.name}
+                    </li>
+                ))}
+            </ul>
+            
+            {/* agora vamos criar uma lista para todos os numeros contidos na listaSimples que passamos via props */}
+
+            <ul>
+                {passandoLista.map((values, index) => (
+                    <li key={index}>
+                        {values}
+                    </li>
+                ))}
+            </ul>
+
+        </div>
+    )
+
+}
