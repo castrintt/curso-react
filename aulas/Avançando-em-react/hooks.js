@@ -133,3 +133,88 @@ const [fruta1,fruta2,fruta3] = frutas
 console.log(fruta1) //maçã
 console.log(fruta2) //banana
 console.log(fruta3) //melão
+
+
+
+
+//Hooks são uma forma de escrever um componente react de forma menos verbosa e mais  perfomática
+
+//temos 2 indices dentro da cosntante declarada para desestruturar o useState
+
+// 1 --> nome da constante 
+
+// 2 -- > função que vai permitir alterar o valor do estado inicial
+
+// seguindo a logica
+
+import {useState} from 'react'
+
+const App = () => {
+
+    //pense que vamos pegar uma lista de repositorios usando a API do git hub
+    //logo o estado incial é uma lista vazia!
+
+    const [repositorios, setRepositorios] = useState([]) // ---> aqui dentro vamos passar o estado inicial da variavel
+
+    //vamos usar destructuring !! --> isso garante que vamos receber partes desse vetor (useState)
+
+    //lembre-se que a sintaxe é a seguinte : const [nomeVariavel, setNomeVariavel] = useState() 
+
+
+    return (
+        <div>
+            <h1>
+                Hello world
+            </h1>
+        </div>
+    )
+}
+
+
+//NOS TEMOS UM useState para cada informação que queremos armazenar, no caso acima estamos armazenando uma lista 
+
+//logo
+
+// repositorios --> nome da variavel
+
+// setRepositorios --> função que altera o valor da variavel (altera o estado)
+
+// useState([]) --> valor incial da variavel repositorios (estado inicial)
+
+import {useState} from 'react'
+
+
+const App = () => {
+
+
+    const [repositorios, setRepositorios] = useState([
+        {
+            name:'repo-teste-1',
+            id:1
+        },
+        {
+            name:'repo-teste-2',
+            id:2
+        },
+        {
+            name:'repo-teste-3',
+            id:3
+        },
+    ])
+
+
+    return (
+
+        <div>
+            <ul>
+                {repositorios.map((values) => (
+                    <li key={values.id}>
+                            {values.name}
+                    </li>
+                ))}
+            </ul>
+        </div>
+    )
+}
+
+//dessa forma criamos uma lista usando o estado inicial dela E sempre que quisermos alterar o estado dessa lista (alterar algo dentro dela) vamos usar a função setRepositorios
