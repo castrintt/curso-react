@@ -12,6 +12,8 @@ import NameDetails from './components/NameDetails'
 import Fragments from './components/Fragments'
 import ChildrenProp from './components/ChildrenProp'
 import FuncoesProps from './components/FuncoesProps'
+import StateLift from './components/StateLift'
+import AlteraLiftState from './components/AlteraLiftState'
 
 
 
@@ -82,6 +84,13 @@ function App() {
   }
 
 
+  const [ message, setMessage] = useState('Mensagem inalterada')
+
+
+  const handleMessage = (msg) => {
+    setMessage(msg)
+  }
+
   return (
     <div className="App">
       <h1>
@@ -137,6 +146,12 @@ function App() {
           </ChildrenProp>
           <br />
           <FuncoesProps func={showMessage}/>
+
+          {/* usando state lift */}
+
+          <StateLift msg={message}/>
+          <br />
+          <AlteraLiftState altera={handleMessage}/>
     </div>
   )
 }
