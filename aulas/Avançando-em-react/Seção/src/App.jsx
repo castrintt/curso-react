@@ -4,12 +4,14 @@ import Teste from './components/Teste.jsx'
 import Listas from './components/Listas.jsx'
 import RenderizacaoCondicional from './components/RenderizacaoCondicional'
 import PassandoProps from './components/PassandoProps'
-import React, {Fragment, useState} from 'react'
+import React, {Children, Fragment, useState} from 'react'
 import DesestruturandoProps from './components/DesestruturandoProps'
 import PropsDeObjetos from './components/PropsDeObjetos'
 import CarDetails from './components/CarDetails'
 import NameDetails from './components/NameDetails'
 import Fragments from './components/Fragments'
+import ChildrenProp from './components/ChildrenProp'
+import FuncoesProps from './components/FuncoesProps'
 
 
 
@@ -72,7 +74,13 @@ function App() {
     },
   ])
 
-  
+  const [valor , setValor] = useState('Esse é o mesmo valor')
+
+
+  function showMessage(){
+    console.log('Evento acontecendo!')
+  }
+
 
   return (
     <div className="App">
@@ -120,8 +128,19 @@ function App() {
         ))}
 
           <Fragments />
+          <br />
+          {/* children prop */}
+          <ChildrenProp  meuValor={valor}>
+            <p>
+              Aqui temos um paragrafo
+            </p>
+          </ChildrenProp>
+          <br />
+          <FuncoesProps func={showMessage}/>
     </div>
   )
 }
 
 export default App
+
+
