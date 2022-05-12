@@ -1,0 +1,23 @@
+.apresentacao__carro{
+    border: 1px solid grey;
+}
+
+.titulo__carro{
+    text-decoration: underline;
+    color: grey;
+    text-transform: uppercase;
+}
+
+.paragrafo__carro_usado{
+    font-weight: bold;
+    position: relative;
+    top: -30px;
+    color: red;
+}
+
+.paragrafo__carro_novo{
+    font-weight: bold;
+    position: relative;
+    top: -30px;
+    color: green;
+}
