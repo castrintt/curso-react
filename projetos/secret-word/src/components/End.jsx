@@ -1,27 +1,15 @@
-import React from 'react'
-import '../styles/End.css'
+import "../styles/End.css";
 
-const End = ({ retry }) => {
-    return (
-        <div>
-            <h1
-                style={
-                    {
-                        color: 'red',
+const GameOver = ({ retry, score }) => {
+  return (
+    <div className="gameover">
+      <h1>Fim de jogo!</h1>
+      <h2>
+        A sua pontuação foi: <span>{score}</span>!
+      </h2>
+      <button onClick={retry}>Reiniciar</button>
+    </div>
+  );
+};
 
-                    }
-                }
-            >
-                Game Over
-            </h1>
-            <button
-                onClick={retry}
-            >
-                Resetar Jogo
-                
-            </button>
-        </div>
-    )
-}
-
-export default End
+export default GameOver;

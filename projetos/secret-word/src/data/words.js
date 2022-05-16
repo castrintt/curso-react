@@ -9,7 +9,7 @@ export const wordsList = {
   livros: ['Dom Quixote', 'Pense e enriqueça', 'Mais esperto que o Diabo', 'Do mil ao milhão'],
   filmes: ['Homens de preto', 'Jumper', 'Old Guard', 'Pinguins de madagascar'],
   animes: ['Attack on titan', 'Naruto', 'Mirai Nikki', 'Steins Gate'],
-  mangas: ['Vagabound','One Piece','Purple Hyacinth','Guaba'],
+  mangás: ['Vagabound','One Piece','Purple Hyacinth','Guaba'],
   series: ['Friends','Greys anatomy','House','Sherlock'],
   hq: ['Dr estranho','Jean grey','Wolverine','Noturno','Vampira'],
   personagens: ['Raven','bloom','Rachel','Sheldon Cooper','Luffy'],
