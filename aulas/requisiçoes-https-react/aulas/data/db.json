@@ -29,6 +29,21 @@
       "name": "capa de chuva",
       "price": "50.50",
       "id": 6
+    },
+    {
+      "name": "teste produto",
+      "price": "123",
+      "id": 7
+    },
+    {
+      "name": "outro produto'",
+      "price": "123123",
+      "id": 8
+    },
+    {
+      "name": "ok",
+      "price": "123",
+      "id": 9
     }
   ]
 }
