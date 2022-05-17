@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react'
+//custom hook
+import { useFetch } from './hooks/useFetch.jsx'
 
 //css
 import '../styles/App.css'
@@ -6,22 +8,27 @@ import '../styles/App.css'
 function App() {
   //states
   const [products, setProducts] = useState([])
+  //usando custom hook
+  //estamos recebendo o retorno do useFetch como objeto {data} porem mudando o nome dele para items usando atribuição ':'
+
   const [name, setName] = useState('')
   const [price, setPrice] = useState('')
 
   const url = 'http://localhost:3000/products'
 
-  // forma mais usada GET
+  const { data, httpConfig } = useFetch(url)
 
-  const dados = async () => {
-    const res = await fetch(url)
-    const data = await res.json()
-    setProducts(data)
-  }
+  // // forma mais usada GET
 
-  useEffect(() => {
-    dados()
-  }, [])
+  // const dados = async () => {
+  //   const res = await fetch(url)
+  //   const data = await res.json()
+  //   setProducts(data)
+  // }
+
+  // useEffect(() => {
+  //   dados()
+  // }, [])
 
   //pode ser feito assim tbm GET
 
@@ -56,21 +63,25 @@ function App() {
 
     //portando uma requisição com base em json deve ser feita assim
 
-    const res = await fetch(url, {
-      method: "POST", //metodo
-      headers: { // conteudo que vamos trabalhar
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(product) // transformando o objeto product em JSON
-    }) // pronto dessa forma fizemos uma requisição do tipo POST
+    // const res = await fetch(url, {
+    //   method: "POST", //metodo
+    //   headers: { // conteudo que vamos trabalhar
+    //     "Content-Type": "application/json"
+    //   },
+    //   body: JSON.stringify(product) // transformando o objeto product em JSON
+    // }) // pronto dessa forma fizemos uma requisição do tipo POST
 
-    //3 carregamento dinâmico
+    // //3 carregamento dinâmico
 
-    const addedProduct = await res.json()
+    // const addedProduct = await res.json()
 
-    setProducts((prevProducts) => {
-      [...prevProducts, addedProduct]
-    })
+    // setProducts((prevProducts) => {
+    //   [...prevProducts, addedProduct]
+     
+    // })
+
+    // Refatorada
+    httpConfig(product,"POST")
 
     setName('')
     setPrice('')
@@ -78,14 +89,11 @@ function App() {
   }
 
 
-
-  console.log(products)
-
   return (
     <div className="App">
       <h1>Lista de produtos</h1>
       <ul>
-        {products.map((values) => (
+        {data && data.map((values) => (
           <li key={values.id}>
             Produto:{values.name} -<span> Preço: R$ {values.price}</span>
           </li>
