@@ -16,7 +16,7 @@ function App() {
 
   const url = 'http://localhost:3000/products'
 
-  const { data, httpConfig } = useFetch(url)
+  const { data, httpConfig, loading } = useFetch(url)
 
   // // forma mais usada GET
 
@@ -77,11 +77,11 @@ function App() {
 
     // setProducts((prevProducts) => {
     //   [...prevProducts, addedProduct]
-     
+
     // })
 
     // Refatorada
-    httpConfig(product,"POST")
+    httpConfig(product, "POST")
 
     setName('')
     setPrice('')
@@ -92,13 +92,15 @@ function App() {
   return (
     <div className="App">
       <h1>Lista de produtos</h1>
-      <ul>
+      {/*loading */}
+      {loading === true ? (<p>Carregando dados</p>) : (<ul>
         {data && data.map((values) => (
           <li key={values.id}>
             Produto:{values.name} -<span> Preço: R$ {values.price}</span>
           </li>
         ))}
-      </ul>
+      </ul>)}
+
       {/* //formulario para envio via POST */}
       <div className="add-product">
         <form

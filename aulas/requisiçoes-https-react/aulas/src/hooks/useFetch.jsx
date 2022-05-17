@@ -6,14 +6,21 @@ export const useFetch = (url) => {
     const [config, setConfig] = useState(null)
     const [method, setMethod] = useState(null)
     const [callFetch, setCallFetch] = useState(false)
+    //loading
+
+    const [loading, setLoading] = useState(false)
+
 
     useEffect(() => {
         const fetchData = async () => {
             try {
+                setLoading(true)
                 const res = await fetch(url)
+
                 const json = await res.json()
 
                 setData(json)
+                setLoading(false)
 
             } catch (err) {
                 console.log(`o erro é ${err}`)
@@ -60,5 +67,5 @@ export const useFetch = (url) => {
     }, [config, method, url])
 
 
-    return { data, httpConfig }
+    return { data, httpConfig, loading }
 }
