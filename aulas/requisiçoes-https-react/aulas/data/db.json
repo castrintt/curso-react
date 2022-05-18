@@ -9,61 +9,6 @@
       "id": 2,
       "name": "Calça vermelha",
       "price": 90
-    },
-    {
-      "name": "camarao",
-      "price": "123",
-      "id": 3
-    },
-    {
-      "name": "",
-      "price": "",
-      "id": 4
-    },
-    {
-      "name": "",
-      "price": "",
-      "id": 5
-    },
-    {
-      "name": "",
-      "price": "",
-      "id": 6
-    },
-    {
-      "name": "",
-      "price": "",
-      "id": 7
-    },
-    {
-      "name": "",
-      "price": "",
-      "id": 8
-    },
-    {
-      "name": "asd",
-      "price": "112",
-      "id": 9
-    },
-    {
-      "name": "asd",
-      "price": "112",
-      "id": 10
-    },
-    {
-      "name": "asd",
-      "price": "112",
-      "id": 11
-    },
-    {
-      "name": "",
-      "price": "",
-      "id": 12
-    },
-    {
-      "name": "asd",
-      "price": "123",
-      "id": 13
     }
   ]
 }

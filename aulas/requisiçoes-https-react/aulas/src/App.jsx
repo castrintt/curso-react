@@ -13,10 +13,12 @@ function App() {
 
   const [name, setName] = useState('')
   const [price, setPrice] = useState('')
+  const [del,setDel] = useState(null)
 
   const url = 'http://localhost:3000/products'
 
-  const { data, httpConfig, loading } = useFetch(url)
+  const { data, httpConfig, loading, error } = useFetch(url)
+  
 
   // // forma mais usada GET
 
@@ -85,18 +87,28 @@ function App() {
 
     setName('')
     setPrice('')
-
   }
 
+  //função de delete
+  const handleRemove = (id) => {
+    httpConfig(id, "DELETE")
+  }
 
   return (
     <div className="App">
       <h1>Lista de produtos</h1>
+      {/* error */}
       {/*loading */}
-      {loading === true ? (<p>Carregando dados</p>) : (<ul>
+      {loading && <p>Carregando dados</p>}
+      {error != null ? (<p>{error}</p>) : (<ul>
         {data && data.map((values) => (
           <li key={values.id}>
             Produto:{values.name} -<span> Preço: R$ {values.price}</span>
+          <button
+            onClick={() => handleRemove(product.id)}
+          >
+            Deletar
+          </button>
           </li>
         ))}
       </ul>)}

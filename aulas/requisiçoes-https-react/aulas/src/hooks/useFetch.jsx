@@ -6,28 +6,33 @@ export const useFetch = (url) => {
     const [config, setConfig] = useState(null)
     const [method, setMethod] = useState(null)
     const [callFetch, setCallFetch] = useState(false)
-    //loading
 
+    //loading
     const [loading, setLoading] = useState(false)
 
+    //tratativa de erro
+    const [error, setError] = useState(null)
+
+    //desafio 
+
+    const [itemId, setItemId] = useState(null)
 
     useEffect(() => {
         const fetchData = async () => {
+            setLoading(true)
             try {
-                setLoading(true)
                 const res = await fetch(url)
 
                 const json = await res.json()
 
                 setData(json)
-                
-                setLoading(false)
 
-            } catch (err) {
-                console.log(`o erro é ${err}`)
+            } catch (error) {
+                setError('houve um erro ao carregar dados')
             }
+            setLoading(false)
         }
-        
+
         fetchData()
     }, [url, callFetch])
 
@@ -43,14 +48,27 @@ export const useFetch = (url) => {
                 },
                 body: JSON.stringify(data)
             })
+
+            setMethod(method)
+
+        } else if (method == "DELETE") {
+            setConfig({
+                method: "DELETE",
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            })
+            setMethod(method)
+            setItemId(data)
         }
 
-        setMethod(method)
     }
 
 
     useEffect(() => {
         const httpRequest = async () => {
+
+
             if (method == "POST") {
 
                 let fetchOptions = [url, config]
@@ -61,6 +79,15 @@ export const useFetch = (url) => {
 
                 setCallFetch(json)
 
+            } else if (method == "DELETE") {
+
+                const deleteUrl = `${url}/${itemId}`
+
+                const res = await fetch(deleteUrl, config)
+
+                const json = await res.json()
+
+                setCallFetch(json)
             }
         }
         httpRequest()
@@ -68,5 +95,6 @@ export const useFetch = (url) => {
     }, [config, method, url])
 
 
-    return { data, httpConfig, loading }
+
+    return { data, httpConfig, loading, error }
 }
