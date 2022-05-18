@@ -118,7 +118,8 @@ function App() {
             </span>
             <input type="number" value={price} name="price" onChange={(e) => setPrice(e.target.value)} />
           </label>
-          <input type="submit" value="Criar produto" />
+          {/* state de loading para post */}
+          {loading == false && (<input type="submit" value="Criar produto" />)}
         </form>
       </div>
     </div>

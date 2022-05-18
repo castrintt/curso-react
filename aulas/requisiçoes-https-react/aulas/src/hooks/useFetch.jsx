@@ -20,6 +20,7 @@ export const useFetch = (url) => {
                 const json = await res.json()
 
                 setData(json)
+                
                 setLoading(false)
 
             } catch (err) {

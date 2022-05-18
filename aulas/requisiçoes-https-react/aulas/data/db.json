@@ -11,48 +11,48 @@
       "price": 90
     },
     {
-      "id": 3,
-      "name": "Boné aba reta",
-      "price": 29.9
+      "name": "camarao",
+      "price": "123",
+      "id": 3
     },
     {
-      "name": "teste",
-      "price": "123",
+      "name": "",
+      "price": "",
       "id": 4
     },
     {
-      "name": "teste",
-      "price": "123",
+      "name": "",
+      "price": "",
       "id": 5
     },
     {
-      "name": "capa de chuva",
-      "price": "50.50",
+      "name": "",
+      "price": "",
       "id": 6
     },
     {
-      "name": "teste produto",
-      "price": "123",
+      "name": "",
+      "price": "",
       "id": 7
     },
     {
-      "name": "outro produto'",
-      "price": "123123",
+      "name": "",
+      "price": "",
       "id": 8
     },
     {
-      "name": "ok",
-      "price": "123",
+      "name": "asd",
+      "price": "112",
       "id": 9
     },
     {
-      "name": "",
-      "price": "",
+      "name": "asd",
+      "price": "112",
       "id": 10
     },
     {
-      "name": "",
-      "price": "",
+      "name": "asd",
+      "price": "112",
       "id": 11
     },
     {
@@ -61,24 +61,9 @@
       "id": 12
     },
     {
-      "name": "",
-      "price": "",
+      "name": "asd",
+      "price": "123",
       "id": 13
-    },
-    {
-      "name": "",
-      "price": "",
-      "id": 14
-    },
-    {
-      "name": "",
-      "price": "",
-      "id": 15
-    },
-    {
-      "name": "http request teste",
-      "price": "123123123",
-      "id": 16
     }
   ]
 }
