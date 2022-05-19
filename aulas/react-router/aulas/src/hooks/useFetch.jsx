@@ -1,14 +1,3 @@
-// Carregando dados
-
-// vamos exercitar novamente o carregamento de dados com nosso Custom hook useFetch
-
-// depois poderemos utiliza-los para o carregamento de dados individuais
-
-// utilizaremos o hook igual ao da ultima seção e vamos imprimir os produtos na Home da mesma forma
-
-
-//conteudo do custom hook
-
 import { useState, useEffect } from 'react'
 
 export const useFetch = (url) => {

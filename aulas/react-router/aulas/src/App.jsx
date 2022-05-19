@@ -4,6 +4,7 @@ import React, {useState, useEffect} from 'react'
 import Home from './pages/Home.jsx'
 import About from './pages/About.jsx'
 import Teste from './pages/Teste.jsx'
+import Product from './pages/Product.jsx' 
 
 //components
 import Repetir from './components/Repetir.jsx'
@@ -23,6 +24,8 @@ const App = () => {
               <Route path='/' element={<Home />}  />
               <Route path='about' element={<About />}  />
               <Route path='teste' element={<Teste />}  />
+              {/* rota dinamica */}
+              <Route path='products/:id' element={<Product />}  />
             </Routes>
           </BrowserRouter>
     </div>
