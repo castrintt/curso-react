@@ -1,0 +1,19 @@
+{
+    "products": [
+        {
+            "id":1,
+            "name":"bone",
+            "price":50.50
+        },
+        {
+            "id":2,
+            "name":"capinha de celular",
+            "price":25
+        },
+        {
+            "id":3,
+            "name":"pelicula",
+            "price":10
+        }
+    ]
+}
