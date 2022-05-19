@@ -1,0 +1,24 @@
+.list {
+    list-style: none;
+    text-align: center;
+
+}
+
+.unorder {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.nav {
+    background: black;
+
+}
+
+.link {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}

@@ -1,24 +1,30 @@
-import { useState } from 'react'
-// config react router
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import React, {useState, useEffect} from 'react'
+
+//import pages
+import Home from './pages/Home.jsx'
+import About from './pages/About.jsx'
+import Teste from './pages/Teste.jsx'
 
 //components
-import Home from './components/Home.jsx'
-import About from './components/About.jsx'
+import Repetir from './components/Repetir.jsx'
+import Navbar from './components/Navbar.jsx'
 
-function App() {
+// react-router-dom
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-  return (
-    <div className="App"> 
-     <h1>
-       React Router -- esse titulo vai se repetir em todas as rotas
-     </h1>
-     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />}/>
-        <Route path="about" element={<About />}/>
-      </Routes>
-     </BrowserRouter>
+const App = () => {
+
+  return(
+    <div>
+        <Repetir />
+          <BrowserRouter>
+              <Navbar />
+            <Routes>
+              <Route path='/' element={<Home />}  />
+              <Route path='about' element={<About />}  />
+              <Route path='teste' element={<Teste />}  />
+            </Routes>
+          </BrowserRouter>
     </div>
   )
 }

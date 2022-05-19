@@ -80,3 +80,13 @@ export default App
 // ou seja quando o usuario acessar http://localhost:3001/ (caminho default) o componente que sera renderizado é o Home
 
 // e quando o usuario acessar http://localhost:3001/about (caminho about) o componente que sera renderizado é o About
+
+
+// para ficar mais profissional, nós separamos em pastas diferentes os componentes que são repetidos e os componentes que são renderizados em rotas especificas
+
+// ou seja
+
+// 1 -> componentes de rotas especificas ficam na pasta pages
+// 2 -> componentes que se repetem ficam na pasta components
+
+// esse é o principio do Router

@@ -1,11 +1,11 @@
 import React from 'react'
 
-const About = () => {
+const About = ({ nome }) => {
   return (
     <div>
-        <h1>
-            Componente About
-        </h1>
+      <h1>
+        Componente About
+      </h1>
     </div>
   )
 }
