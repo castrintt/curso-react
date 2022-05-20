@@ -1,40 +1,57 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+
+import { useFetch } from '../hooks/useFetch'
 import { useParams } from 'react-router-dom'
-import { useFetch } from '../hooks/useFetch.jsx'
+import { Link } from 'react-router-dom'
+
 
 const Product = () => {
 
     const { id } = useParams()
-    // esse id que estamos usando para desestruturar o objeto que o useParams nos retorna foi setado dentro de App no Link para produtos
-    //segue o link abaixo
-    //<Link to="products/:id"> // aqui passamos :id e o useParams recebeu como {id}
-    //     Produtos
-    // </Link>
+
+    const url = `http://localhost:3000/products/${id}`
 
 
-    //CARREGAMENTO DE DADO INDIVUAL usando nosso hook criado, useFetch
+    //sem useFetch
 
-    const url = 'http://localhost:3000/products/' + id
+    // const [data, setData] = useState([])
+
+    // const handleRequest = async () => {
+
+    //     const res = await fetch(url)
+
+    //     const json = await res.json()
+
+    //     setData(json)
+    // }
+
+    // useEffect(() => {
+    //     handleRequest()
+    // },[])
+
+    //com useFetch
 
     const { data, loading, error } = useFetch(url)
 
+
     return (
         <>
-            <p>
-                ID do produto: {id}
-            </p>
-            {error && <p>Ocorreu um erro</p>}
-            {loading && <p>Carregando...</p>}
-            <ul>
-                <li>
+            <Link to='/'>
+                Back to Home
+            </Link>
+
+            {error && <p>Ocorreu algum erro...</p>}
+            {loading == true ? <p>Carregando dados...</p> : (
+                <div>
                     <h1>
-                        Produto: {data && data.name}
+                        ID do produto : {id}
                     </h1>
-                    <p>
-                        Preço: R$ {data && data.price}
-                    </p>
-                </li>
-            </ul>
+                    <h1>
+                        Produto : {data && data.name} -- Preço : {data && data.price}
+                    </h1>
+                </div>
+            )}
+
         </>
     )
 }

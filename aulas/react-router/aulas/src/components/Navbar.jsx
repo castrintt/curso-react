@@ -20,11 +20,6 @@ const Navbar = () => {
                     About
                 </Link>
             </li>
-            <li className={styles.list}>
-                <Link to='teste' className={styles.link}>
-                    Teste
-                </Link>
-            </li>
         </ul>
         </nav>
     </>

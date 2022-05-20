@@ -1,34 +1,29 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { useFetch } from '../hooks/useFetch.jsx'
+import { useFetch } from "../hooks/useFetch";
+import {Link} from 'react-router-dom'
 
 const Home = () => {
 
   const url = 'http://localhost:3000/products'
 
-  const { data , loading, error} = useFetch(url)
+  const { data, loading, error} = useFetch(url)
 
-  return (
+  return(
     <div>
-        <h1>
-            Componente Home/Produtos
-        </h1>
-        {error && <p>{error}</p>}
-        
-        {data && 
-          <ul>
-            {data.map((values) => (
-              <li key={values.id}>
-                  <h1>Produto: {values.name}</h1>
-                  <p>Preço: R$ {values.price}</p>
-                  <Link to={`products/${values.id}`} >
-                    Detalhes do produto
-                  </Link>
-              </li>
-              
-            ))}
-          </ul>
-        }
+      <h1>
+        Home
+      </h1>
+      <ul>
+        {data && data.map((values) => (
+          <li key={values.id}>
+            <h1>
+              {values.name} -- {values.price}
+            </h1>
+            <Link to={`products/${values.id}`}>
+              Ver detalhes
+            </Link>
+          </li>
+        ))}
+      </ul>
     </div>
   )
 }
