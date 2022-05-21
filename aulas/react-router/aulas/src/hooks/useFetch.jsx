@@ -42,7 +42,7 @@ export const useFetch = (url) => {
     const httpConfig = (data, method) => {
         if (method === "POST") {
             setConfig({
-                method,
+                method: "POST",
                 headers: {
                     "Content-Type": "application/json"
                 },
@@ -63,6 +63,9 @@ export const useFetch = (url) => {
         }
 
     }
+
+    
+
 
 
     useEffect(() => {

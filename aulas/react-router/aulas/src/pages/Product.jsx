@@ -49,6 +49,10 @@ const Product = () => {
                     <h1>
                         Produto : {data && data.name} -- Preço : {data && data.price}
                     </h1>
+                    {/* nested routes */}
+                    <Link to={`/products/${id}/info`}>
+                        Mais informações
+                    </Link>
                 </div>
             )}
 

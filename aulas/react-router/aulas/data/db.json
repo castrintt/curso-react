@@ -3,17 +3,20 @@
         {
             "id":1,
             "name":"bone",
-            "price":50.50
+            "price":50.50,
+            "info":"produto de qualidade"
         },
         {
             "id":2,
             "name":"capinha de celular",
-            "price":25
+            "price":25,
+            "info":"produto usado"
         },
         {
             "id":3,
             "name":"pelicula",
-            "price":10
+            "price":10,
+            "info":"produto estragado"
         }
     ]
 }

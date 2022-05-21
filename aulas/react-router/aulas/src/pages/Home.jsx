@@ -1,6 +1,7 @@
 import { useFetch } from "../hooks/useFetch";
 import {Link} from 'react-router-dom'
 
+
 const Home = () => {
 
   const url = 'http://localhost:3000/products'
@@ -18,7 +19,7 @@ const Home = () => {
             <h1>
               {values.name} -- {values.price}
             </h1>
-            <Link to={`products/${values.id}`}>
+            <Link to={`/products/${values.id}`}>
               Ver detalhes
             </Link>
           </li>
