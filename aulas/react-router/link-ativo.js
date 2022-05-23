@@ -54,4 +54,16 @@ export default NavBar
 }
 
 
-//podemos tbm executar 
+//podemos tbm executar de forma dinamica tbm usando a seguinte sintaxe no className dentro de NavLink
+
+<NavLink to='/rota-qualquer'  className={({  isActive  }) => (isActive ? 'active' : undefined)}>
+    Rota
+</NavLink>
+
+
+// essa forma é util caso queria aplicar por exemplo um estilo diferente paras rotas desativadas
+
+//explicando a condicional, estamos acessando isActive, que resolve uma arrow function para um if ternario, caso isActive seja chamado executa o bloco da interrogação ( ?  --> 'active') ou seja, chama a classe active quando esta ativo, caso não esteja ative chama a resolução dos 2 pontos ( : --> undefined) ou seja, nada acontece caso a rota não esteja selecionada
+
+
+//essa é uma possibilidade, porem o mais usado mesmo é um estilo com a classe .active e o react ja entende q é para usar essa classe quando a rota estiver selecionada
