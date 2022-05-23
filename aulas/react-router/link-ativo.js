@@ -67,3 +67,15 @@ export default NavBar
 
 
 //essa é uma possibilidade, porem o mais usado mesmo é um estilo com a classe .active e o react ja entende q é para usar essa classe quando a rota estiver selecionada
+
+
+
+// Resumindo existem 2 formas de usarmos o Navlink para determinar qual rota está ativa ou não
+
+// a primeira é muito simples, basta ter um estilo que se chame .active, e o react identifica automaticamente qual rota está ativa e usa esse estilo
+
+// a segunda é um pouco mais dinamica e menos usual, onde dentro de className (usando template expressions) vamos passar uma arrow function que resolve um if else ternario, passamos como parametro para essa arrow function um objeto isActive
+
+// logo ficaria assim :
+
+{/* <NavLink to='/rota-qualquer' className={({ isActive }) => (isActive ? 'nome de uma classe quando esta ativo' : 'nome de uma classe quando está inativo')} */}
