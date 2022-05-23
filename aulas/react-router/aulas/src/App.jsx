@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 //components
 import Navbar from './components/Navbar.jsx'
@@ -33,6 +33,8 @@ const App = () => {
           <Route path="/teste" element={<Teste />} />
           <Route path="*" element={<PageNotFound />} />
           <Route path='/search' element={<SearchPage />} />
+          <Route path='/company' element={<Navigate to='/about' />} />
+          {/* caso o usuario acesse uma rota antiga, chamada de company, ele é redirecionado para /about, graças ao Navigate */}
         </Routes>
       </BrowserRouter>
     </div>

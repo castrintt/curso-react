@@ -1,5 +1,5 @@
 import React from 'react'
-import { useSearchParams, Link } from 'react-router-dom'
+import { useSearchParams, Link, Navigate } from 'react-router-dom'
 import { useFetch } from '../hooks/useFetch'
 
 const SearchPage = () => {
