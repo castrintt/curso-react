@@ -1,14 +1,14 @@
 import { useFetch } from "../hooks/useFetch";
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 
 const Home = () => {
 
   const url = 'http://localhost:3000/products'
 
-  const { data, loading, error} = useFetch(url)
+  const { data, loading, error } = useFetch(url)
 
-  return(
+  return (
     <div>
       <h1>
         Home
