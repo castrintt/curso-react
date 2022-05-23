@@ -1,34 +1,27 @@
-import React from 'react'
+import { Link, NavLink } from "react-router-dom";
 
-import styles from '../styles/Navbar.module.css'
-
-//react router dom
-import { Link } from 'react-router-dom'
+import "../styles/Navbar.css";
 
 const Navbar = () => {
   return (
-    <>
-        <nav className={styles.nav}>
-        <ul className={styles.unorder}>
-            <li className={styles.list}>
-                <Link to='/' className={styles.link}>
-                    Home
-                </Link>
-            </li>
-            <li className={styles.list}>
-                <Link to='/about' className={styles.link}>
-                    About
-                </Link>
-            </li>
-            <li className={styles.list}>
-                <Link to='/teste' className={styles.link}>
-                    Teste
-                </Link>
-            </li>
-        </ul>
-        </nav>
-    </>
-  )
-}
+    <nav>
+      {/* <Link to="/">Home</Link>
+      <Link to="/about">Sobre</Link> */}
+      {/* 8 - active link */}
+      <NavLink
+        className={({ isActive }) => (isActive ? "active" : undefined)}
+        to="/"
+      >
+        Home
+      </NavLink>
+      <NavLink
+        className={({ isActive }) => (isActive ? "active" : undefined)}
+        to="/about"
+      >
+        Sobre
+      </NavLink>
+    </nav>
+  );
+};
 
-export default Navbar
+export default Navbar;

@@ -7,6 +7,8 @@ import About from './pages/About.jsx'
 import Product from './pages/Product.jsx'
 import Info from './pages/Info.jsx'
 import Teste from "./components/Teste.jsx";
+import PageNotFound from "./pages/PageNotFound.jsx";
+
 
 
 
@@ -22,6 +24,7 @@ const App = () => {
           <Route path="/products/:id" element={<Product />} />
           <Route path={`/products/:id/info`} element={<Info />} />
           <Route path="/teste" element={<Teste />} />
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>
     </div>
