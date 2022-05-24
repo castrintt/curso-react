@@ -80,6 +80,25 @@ const Navbar = () => {
                         Contact
                     </Link>
                 </li>
+                <li
+                    style={
+                        {
+                            listStyle: 'none',
+                            marginRight: '20px',
+
+                        }
+                    }
+                >
+                    <Link
+                        style={
+                            {
+                                textDecoration: 'none'
+                            }
+                        }
+                        to='/change' >
+                        Change
+                    </Link>
+                </li>
             </ul>
         </nav>
     )
