@@ -1,10 +1,10 @@
-import React, {useContext} from 'react'
-import {CounterContext} from '../context/CounterContext'
+import { useCounterContext } from "../hooks/useCounterContext"
+
+
 
 const Home = () => {
 
-  //useContext desestrutura o CounterContextProvider
-  const {data, setData} = useContext(CounterContext)
+  const {counter} = useCounterContext()
 
   return(
     <div>
@@ -12,7 +12,7 @@ const Home = () => {
         home
       </h1>
       <p>
-        Consumindo aqui o dado do contexto : {data}
+        Consumindo aqui o dado do contexto : {counter}
       </p>
       <button
         onClick={() => setData(data + 1)}
