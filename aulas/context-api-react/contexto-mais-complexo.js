@@ -199,3 +199,5 @@ const About = () => {
 }
 
 export default About
+
+// criado um useReducer que manipula 2 estados resgatados pelo useState
