@@ -1,7 +1,12 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 
 import UseReducerHook from './components/UseReducerHook'
 import UseReducerActions from './components/UseReducerActions'
+import UseEffectHook from './components/UseEffectHook'
+
+import {SomeContext} from './context/SomeContext'
+import UseRefHook from './components/UseRefHook'
+import UseRefDom from './components/UseRefDom'
 
 
 function App() {
@@ -12,6 +17,7 @@ function App() {
   const [age, setAge] = useState('')
 
 
+  const {texto} = useContext(SomeContext)
 
   return (
     <div className="App">
@@ -47,6 +53,10 @@ function App() {
       </form>
         <UseReducerHook />
         <UseReducerActions />
+        <UseEffectHook />
+        <h1>{texto}</h1>
+        <UseRefHook />
+        <UseRefDom />
     </div>
   )
 }
