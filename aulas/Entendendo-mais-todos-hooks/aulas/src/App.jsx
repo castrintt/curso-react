@@ -7,6 +7,10 @@ import UseEffectHook from './components/UseEffectHook'
 import {SomeContext} from './context/SomeContext'
 import UseRefHook from './components/UseRefHook'
 import UseRefDom from './components/UseRefDom'
+import UseCallBack from './components/UseCallBack'
+import List from './components/List'
+import UseMemo from './components/UseMemo'
+import UseLayoutEffect from './components/UseLayoutEffect'
 
 
 function App() {
@@ -57,6 +61,9 @@ function App() {
         <h1>{texto}</h1>
         <UseRefHook />
         <UseRefDom />
+        <UseCallBack />
+        <UseMemo />
+        <UseLayoutEffect />
     </div>
   )
 }

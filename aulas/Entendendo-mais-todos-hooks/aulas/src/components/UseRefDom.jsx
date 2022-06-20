@@ -1,35 +1,33 @@
-import {useRef, useState} from 'react'
+import { useRef, useState } from "react";
 
 const UseRefDom = () => {
-
-  const inputRef = useRef()
-  const [text, setText] = useState('')
-
+  const inputRef = useRef("OLA");
+  const [text, setText] = useState("");
+  
   const handleSubmit = (e) => {
     e.preventDefault()
     console.log(inputRef)
-    setText('')
-
-    inputRef.current.focus()
-
   }
 
   return (
     <div>
-        <h1>
-            useRef no DOM
-        </h1>
-        <form
-          onSubmit={handleSubmit}
-        >
-          <input type="text" ref={inputRef} name="text" value={text} onChange={(e) => setText(e.target.value)} />
-          <input type="submit" value="Enviar" />
-        </form>
-        <h1>
-          {inputRef.current.value}
-        </h1>
+      <h1>useRef</h1>
+      <span>
+        {inputRef.current.value}
+      </span>
+      <form
+      onSubmit={handleSubmit}
+      >
+        <input
+          type="text"
+          ref={inputRef}
+          // value={text}
+          // onChange={(e) => setText(e.target.value)}
+        />
+        <input type="submit" value="Enviar" />
+      </form>
     </div>
-  )
-}
+  );
+};
 
-export default UseRefDom
+export default UseRefDom;

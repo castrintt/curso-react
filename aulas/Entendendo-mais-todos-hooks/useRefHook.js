@@ -108,3 +108,42 @@ const UseRefDom = () => {
 }
 
 export default UseRefDom
+
+
+// para criar uma referencia de um input basicamente deve se importar o useRef e usar dentro da tag onde está contido a chamada do input a tag ref={nomeReferencia.current}
+
+import { useRef, useState } from "react";
+
+const UseRefDom = () => {
+  //veja como exemplo, temos o useRef e o useState
+  const inputRef = useRef("OLA");
+  const [text, setText] = useState("");
+  
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log(inputRef)
+  }
+
+  return (
+    <div>
+      <h1>useRef</h1>
+      <span>
+        {inputRef.current.value}
+      </span>
+      <form
+      onSubmit={handleSubmit}
+      >
+        <input
+          type="text"
+          //usando a tag ref capturamos o valor do input pela tag ref, porem o valor de ref é capturado do value do input, que assim sendo foi capturado pelo useState no onChange
+          ref={inputRef}
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+        />
+        <input type="submit" value="Enviar" />
+      </form>
+    </div>
+  );
+};
+
+export default UseRefDom;
