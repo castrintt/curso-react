@@ -11,6 +11,7 @@ import UseCallBack from './components/UseCallBack'
 import List from './components/List'
 import UseMemo from './components/UseMemo'
 import UseLayoutEffect from './components/UseLayoutEffect'
+import UseImperativeHandle from './components/UseImperativeHandle'
 
 
 function App() {
@@ -64,6 +65,7 @@ function App() {
         <UseCallBack />
         <UseMemo />
         <UseLayoutEffect />
+        <UseImperativeHandle />
     </div>
   )
 }
